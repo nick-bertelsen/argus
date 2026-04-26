@@ -1,10 +1,5 @@
-import { log } from "node:console";
-
 async function getBackendInfo() {
   const url = process.env.BACKEND_URL || "http://localhost:5000";
-
-  log(url);
-
   try {
     const res = await fetch(url, { cache: "no-store" });
     return await res.json();
